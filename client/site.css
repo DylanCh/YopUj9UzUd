@@ -1,0 +1,44 @@
+/**
+ * Author: Hanjun Chen
+ * Created: 8/18/2017
+ */
+#table1 {
+    border-collapse: collapse;
+}
+
+tr.clickable{
+  border-bottom: thick dashed #ff0000;
+  background-color:#D3D3D3;  
+}
+
+tr.clickable:last-child {
+    border: none;
+}
+
+.img-circle {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.img-td{
+    width:20%;
+}
+
+.contend-td{
+    border-right:none;
+    width:80%;
+}
+
+.secret{
+    width:0%;
+}
+
+.mobile{
+    text-align: center;
+}
+
+.mobile img{
+    display: block;
+    margin: auto;
+}
