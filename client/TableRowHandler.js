@@ -30,26 +30,23 @@ var clickEventHandler = (event)=>{
     return secret;
 };
 
+/**
+ * Clear the secret displaying area
+ */
+var clearUpperArea = ()=>{
+    $('#alert').val('');
+    $('#colorArea').toggle();
+};
+
 $(document).ready(()=>{
    
     $('.clickable, .mobile').click((event)=>{
       clickEventHandler(event);  
     });   
 
-    /**
-     * Clear the secret displaying area
-     */
-    var clearUpperArea = ()=>{
-        $('#alert').val('');
-        $('#colorArea').toggle();
-    };
 
     $('#clearBtn').click(()=>{
         clearUpperArea();
     });
-
-    
-
-    
-    
+   
 });

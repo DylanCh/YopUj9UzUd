@@ -13,15 +13,15 @@ $(document).ready(()=>{
      * Desplay in mobile mode
      */
     var mobileLayout = ()=>{
-        $.ajax('/m')
+        $.ajax('/m',{cache:true})
         .done((result)=>{
             console.log(result);
             var dataArray = result;
             var html = `<div class="row" id="colorArea" hidden>
                             <div class="alert">
                                 <p id="alert"></p>
-                            </div>
-                            <button class="form-control" id="clearBtn">Clear</button>
+                                <button class="form-control" id="clearBtn">Clear</button>
+                            </div>    
                         </div>
                         <table class="table" id="table1">
                             <tbody>`;
@@ -35,15 +35,18 @@ $(document).ready(()=>{
                             <h1 class="mobile">${element['name']}</h1>
                             <p class="mobile">${convertTimeStampToDate(element['timestamp'])}</p>
                         </td>
+                        <td hidden class="secret">${element['secret']}</td>
                     </tr>`;
             });
 
             html+='</tbody></table></div>';
             $('body').html('').prepend(html);
-            var secret ='';
-            $('.clickable').click((e)=>{
-                clickEventHandler(e);
-            });
+            $(document).on('click',
+                '.clickable, .mobile',
+                clickEventHandler
+            );
+
+            $(document).on('click','#clearBtn',clearUpperArea);
         })
         .fail((xhr,status,e)=>{
             console.log(stauts);
