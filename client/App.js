@@ -40,6 +40,10 @@ $(document).ready(()=>{
 
             html+='</tbody></table></div>';
             $('body').html('').prepend(html);
+            var secret ='';
+            $('.clickable').click((e)=>{
+                clickEventHandler(e);
+            });
         })
         .fail((xhr,status,e)=>{
             console.log(stauts);
@@ -47,8 +51,9 @@ $(document).ready(()=>{
     };
 
     // check on page initial load
-    if ($(window).width()<=640)
+    if ($(window).width()<=640){
         mobileLayout();
+    }
 
     // On window resize, check if the screen width is less than 
     var timer_id;

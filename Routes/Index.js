@@ -29,8 +29,9 @@ var render = (dataArray)=>{
                         <link href="public/site.css" rel="stylesheet" type="text/css">
                         <link rel="icon" sizes="32x32" type="image/png" href="https://nodejs.org/static/favicon.png">
                         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-                        <script src="public/App.js"></script>
                         <script src="public/TableRowHandler.js"></script>
+                        <script src="public/App.js"></script>
+                        
                     </head>
                     <body class="container">
                         <div>
